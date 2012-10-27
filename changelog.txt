@@ -1,0 +1,89 @@
+[B]Version 1.6.3[/B] - 26 Jul 2012
+If no page count downloaded from goodreads, prevent wrong error appearing in log
+If book configured for page count only and has no formats, prevent error in log (if downloading from Goodreads)
+
+[B]Version 1.6.2[/B] - 19 Jul 2012
+Make the html tag removal for body tag data case insensitive to fix issue with PDF conversions from 1.6.0
+
+[B]Version 1.6.1[/B] - 17 Jul 2012
+If a book has zero words, just display an error in log rather than storing zero in the column
+
+[B]Version 1.6.0[/B] - 14 Jul 2012
+Add three new statistics for calculating readability - Flesch Reading Ease, Flesch-Kincaid Grade Level and Gunning Fog.
+Remove the redundant Words algorithm combo since only one algorithm offered.
+Make page algorithm a per library setting rather than a plugin level setting
+For CBR and CBZ book formats, calculate the number of pages as being the number of image files rather than converting to ePub
+For CBR and CBZ book formats, only allow the Count Pages statistic and ignore all other statistics
+Fix tooltip missing line breaks in configuration dialog
+
+[B]Version 1.5.0[/B] - 22 Jun 2012
+Now requires calibre 0.8.57
+Store configuration in the calibre database rather than a json file, to allow reuse from different computers (not simultaneously!)
+Add a support option to the configuration dialog allowing viewing the plugin data stored in the database
+Remove the additional menu items for individual word/page counts added in v1.4.0 as cluttered the interface
+
+[B]Version 1.4.3[/B] - 02 Jun 2012
+Add another page count algorithm of "Adobe Digital Editions (ADE)", which matches that used by the ADE software and some devices like Nook.
+Rename the "Calibre Viewer (Adobe)" option to "E-book Viewer (calibre)" as it was misleading, calibre uses its own calculation not the Adobe one.
+
+[B]Version 1.4.2[/B] - 31 May 2012
+Optimisation for counting pages for PDFs to read the page count from the PDF info rather than estimating it
+Revert the performance optimisation from 1.4.0 which affected the character count statistics
+
+[B]Version 1.4.1[/B] - 30 May 2012
+Fix problem with new overwrite existing behaviour not counting pages in some circumstances
+
+[B]Version 1.4.0[/B] - 30 May 2012
+Minimum version set to calibre 0.8.51
+Performance optimisation for epubs for calibre 0.8.51 to reduce unneeded computation
+Change to calibre API for deprecated dialog which caused issues that intermittently crashed calibre
+Additional items for menu to allow doing page/word counts in isolation
+Add an 'Always overwrite existing value' checkbox (default is True), to allow users to turn off overwriting manually populated page/word counts without choosing the isolated menu option
+
+[B]Version 1.3.3[/B] - 13 Apr 2012
+Support change to Goodreads website for scraping page count
+
+[B]Version 1.3.2[/B] - 07 Apr 2012
+Fix bug where preferred input order not being correctly applied (was alphabetical instead!)
+Fix bug where LIT formats would cause file in use errors
+
+[B]Version 1.3.1[/B] - 03 Mar 2012
+Support count page/word estimates for any book format by converting to ePub, using preferred input format order
+
+[B]Version 1.3.0[/B] - 12 Feb 2012
+Add a Download from Goodreads option to allow retrieving book count from books that have a Goodreads identifier
+If word count is disabled (i.e. only page count) allow download of page count for any book regardless of formats
+Attempted workaround for Qt issue on Mac where some books would crash calibre.
+
+[B]Version 1.2.0[/B] - 11 Sep 2011
+Upgrade to support the centralised keyboard shortcut management in Calibre
+
+[B]Version 1.1.3[/B] - 03 Jul 2011
+Preparation for deprecation for db.format_abspath() function in future Calibre for network backends
+
+[B]Version 1.1.2[/B] - 15 Jun 2011
+No longer allow text custom columns
+Address issue of unicode character conversion with some MOBI books for count words
+
+[B]Version 1.1.1[/B] - 12 Jun 2011
+Fix bug if user chooses to retrieve only word count
+If an unexpected error thrown while counting, include in log
+Display log and no results dialog if no statistics were gathered
+Change Mobi word count to not require a conversion
+
+[B]Version 1.1[/B] - 09 Jun 2011
+Add option to generate a word count instead of or in addition to page count
+
+[B]Version 1.0.3[/B] - 26 May 2011
+Offer choice of algorithms to match eBook viewer or APNX generation (default)
+Ensure DRM encrypted books do not cause errors
+
+[B]Version 1.0.2[/B] - 23 May 2011
+Update dialog and plugin descriptions to indicate Mobi support available/considered
+
+[B]Version 1.0.1[/B] - 23 May 2011
+Support option to prioritise either Mobi formats (using APNX algorithm) or ePub files
+Change ePub page count algorithm to be similar to the Mobi APNX algorithm
+
+[B]Version 1.0[/B] - 21 May 2011
+Initial release of Count Pages plugin
